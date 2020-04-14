@@ -24,7 +24,7 @@ import (
 	com "github.com/opencord/voltha-lib-go/v3/pkg/adapters/common"
 	"github.com/opencord/voltha-lib-go/v3/pkg/kafka"
 	"github.com/opencord/voltha-lib-go/v3/pkg/log"
-	lm "github.com/opencord/voltha-lib-go/v3/pkg/mocks"
+	km "github.com/opencord/voltha-lib-go/v3/pkg/mocks/kafka"
 	ic "github.com/opencord/voltha-protos/v3/go/inter_container"
 	of "github.com/opencord/voltha-protos/v3/go/openflow_13"
 	"github.com/opencord/voltha-protos/v3/go/voltha"
@@ -60,7 +60,7 @@ func init() {
 	var err error
 
 	// Create the KV client
-	kc = lm.NewKafkaClient()
+	kc = km.NewKafkaClient()
 
 	// Setup core inter-container proxy and core request handler
 	coreKafkaICProxy = kafka.NewInterContainerProxy(
